@@ -224,6 +224,12 @@ html[data-theme="dark"] .btn-mas-info:hover {
     transform: translateY(0);
 }
 
+.botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .btn-rojo {
     background-color: red;
 }
