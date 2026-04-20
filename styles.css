@@ -173,8 +173,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
     width: 100%;
+    gap: 1rem;
 }
 
 footer button {
@@ -228,6 +228,7 @@ html[data-theme="dark"] .btn-mas-info:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .btn-rojo {
