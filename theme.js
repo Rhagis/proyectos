@@ -28,7 +28,15 @@ document.addEventListener("DOMContentLoaded", function () {
         html.setAttribute("data-theme", siguiente);
         try {
             localStorage.setItem("theme", siguiente);
-        } catch (e) {}
+        } catch (e) { }
         actualizarBoton();
     });
 });
+
+const btnRojo = document.querySelector(".btn-rojo")
+const btnAzul = document.querySelector(".btn-azul")
+const btnVerde = document.querySelector(".btn-verde")
+
+document.addEventListener('click', () => {
+    btnRojo.style.color = 'red'
+})
