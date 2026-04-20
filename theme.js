@@ -37,11 +37,27 @@ const btnRojo = document.querySelector(".btn-rojo")
 const btnAzul = document.querySelector(".btn-azul")
 const btnVerde = document.querySelector(".btn-verde")
 
-document.addEventListener('click', () => {
+btnRojo.addEventListener('click', () => {
     if (btnRojo.style.color != 'red') {
         btnRojo.style.color = 'red'
     }
     else {
         btnRojo.style.color = 'white'
+    }
+})
+btnAzul.addEventListener('click', () => {
+    if (btnAzul.style.color != 'blue') {
+        btnAzul.style.color = 'blue'
+    }
+    else {
+        btnAzul.style.color = 'white'
+    }
+})
+btnVerde.addEventListener('click', () => {
+    if (btnVerde.style.color != 'green') {
+        btnVerde.style.color = 'green'
+    }
+    else {
+        btnVerde.style.color = 'white'
     }
 })
