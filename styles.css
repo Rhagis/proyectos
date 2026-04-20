@@ -1,9 +1,13 @@
+/* =========================
+   Reset y base global
+   ========================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Imagen de perfil circular en el header */
 header img {
     display: block;
     width: 8rem;
@@ -16,7 +20,12 @@ html {
     font-size: 62.5%;
 }
 
-/* Colores: modo claro (:root) y modo oscuro (data-theme en <html>) */
+/* =========================
+   Variables de color por tema
+   =========================
+   - :root aplica el tema claro
+   - html[data-theme="dark"] sobreescribe para tema oscuro
+*/
 :root {
     --fondo-pagina: darkgoldenrod;
     --fondo-tarjeta: #a3b5a5;
@@ -45,6 +54,9 @@ html[data-theme="dark"] {
     --boton-tema-borde: #1a1f1c;
 }
 
+/* =========================
+   Estructura principal
+   ========================= */
 body {
     font-size: 1.6rem;
     margin: 0;
@@ -57,6 +69,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Tarjeta contenedora principal */
 main {
     display: flex;
     flex-direction: column;
@@ -72,6 +85,7 @@ main {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Encabezado con foto + nombre */
 header {
     display: flex;
     justify-content: center;
@@ -81,6 +95,7 @@ header {
     margin-top: 15px;
 }
 
+/* Contenedor de la imagen del header */
 .header-foto {
     flex-shrink: 0;
     display: flex;
@@ -88,13 +103,18 @@ header {
     align-items: center;
 }
 
+/* Nombre del perfil */
 h1 {
     white-space: nowrap;
     color: var(--titulo);
     transition: color 0.3s ease;
 }
 
-/* Botón para cambiar tema (sol / luna como caracteres Unicode) */
+/* =========================
+   Botón para alternar tema
+   =========================
+   Muestra icono + texto y reacciona en hover/active.
+*/
 .dark-mode {
     align-self: flex-end;
     margin-top: 0.5rem;
@@ -112,24 +132,31 @@ h1 {
     transition: filter 0.2s ease, transform 0.15s ease;
 }
 
+/* Efecto visual al pasar el mouse */
 .dark-mode:hover {
     filter: brightness(1.1);
 }
 
+/* Feedback táctil/click */
 .dark-mode:active {
     transform: scale(0.98);
 }
 
+/* Tamaño y transición del icono (sol/luna) */
 .dark-mode__icon {
     font-size: 1.8rem;
     line-height: 1;
     transition: transform 0.25s ease;
 }
 
+/* Rotación sutil del icono al hover */
 .dark-mode:hover .dark-mode__icon {
     transform: rotate(15deg);
 }
 
+/* =========================
+   Bloque de estadísticas
+   ========================= */
 .datos {
     display: flex;
     flex-direction: row;
@@ -139,6 +166,7 @@ h1 {
     gap: 1rem;
 }
 
+/* Número destacado de cada estadística */
 .numero {
     font-size: 2rem;
     font-weight: bold;
@@ -153,12 +181,14 @@ h1 {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Texto descriptivo debajo del número */
 .estad-texto {
     text-align: center;
     color: var(--texto-suave);
     transition: color 0.3s ease;
 }
 
+/* Regla base para secciones de estadísticas */
 section {
     display: flex;
     flex-direction: column;
@@ -169,6 +199,9 @@ section {
     min-width: 0;
 }
 
+/* =========================
+   Footer y botones inferiores
+   ========================= */
 footer {
     display: flex;
     justify-content: center;
@@ -177,6 +210,7 @@ footer {
     gap: 1rem;
 }
 
+/* Estilo base compartido para los botones del footer */
 footer button {
     flex-grow: 1;
     flex-basis: 0;
@@ -194,18 +228,21 @@ footer button {
     margin-bottom: 1rem;
 }
 
+/* Variante de botones del footer en modo oscuro */
 html[data-theme="dark"] footer button {
     border-color: #cfd4cf;
     background-color: #e8ebe8;
     color: #111;
 }
 
+/* Hover del botón "Contacto" */
 .btn-contacto:hover {
     background-color: #fff;
     color: #000;
     border-color: #000;
 }
 
+/* Hover del botón "Mas informacion" */
 .btn-mas-info:hover {
     background-color: #2a332a;
     color: #e8ede8;
@@ -213,17 +250,23 @@ html[data-theme="dark"] footer button {
     transform: translateY(-0.5rem);
 }
 
+/* Ajuste específico del hover de "Mas informacion" en tema oscuro */
 html[data-theme="dark"] .btn-mas-info:hover {
     background-color: #3d4540;
     color: #f5f5f5;
     border-color: #2a322d;
 }
 
+/* Resetea desplazamiento al hacer click */
 .btn-contacto:active,
 .btn-mas-info:active {
     transform: translateY(0);
 }
 
+/* =========================
+   Sección de botones de color
+   ========================= */
+/* Contenedor en fila para mantener los 3 botones lado a lado */
 .botones {
     display: flex;
     justify-content: center;
@@ -232,6 +275,7 @@ html[data-theme="dark"] .btn-mas-info:hover {
     gap: 1rem;
 }
 
+/* Estilo base de los botones Rojo/Azul/Verde */
 .botones button {
     flex-grow: 1;
     flex-basis: 0;
@@ -242,25 +286,31 @@ html[data-theme="dark"] .btn-mas-info:hover {
     color: #fff;
     font-size: 1.6rem;
     font-weight: bold;
+    /* Contorno de texto para legibilidad cuando el color del texto cambia */
     -webkit-text-stroke: 1px #000;
+    /* Fallback para navegadores sin soporte completo de text-stroke */
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease,
         transform 0.2s ease;
 }
 
+/* En oscuro solo se aclara el borde para contraste */
 html[data-theme="dark"] .botones button {
     border-color: #cfd4cf;
 }
 
+/* Hover suave sin alterar el color base de cada botón */
 .botones button:hover {
     filter: brightness(1.1);
 }
 
+/* Estado activo del botón */
 .botones button:active {
     transform: translateY(0);
 }
 
+/* Colores de fondo propios de cada botón */
 .btn-rojo {
     background-color: red;
 }
