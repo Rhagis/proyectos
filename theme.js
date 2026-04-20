@@ -38,5 +38,10 @@ const btnAzul = document.querySelector(".btn-azul")
 const btnVerde = document.querySelector(".btn-verde")
 
 document.addEventListener('click', () => {
-    btnRojo.style.color = 'red'
+    if (btnRojo.style.color != 'red') {
+        btnRojo.style.color = 'red'
+    }
+    else {
+        btnRojo.style.color = 'white'
+    }
 })
