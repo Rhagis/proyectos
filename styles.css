@@ -223,3 +223,15 @@ html[data-theme="dark"] .btn-mas-info:hover {
 .btn-mas-info:active {
     transform: translateY(0);
 }
+
+.btn-rojo {
+    background-color: red;
+}
+
+.btn-azul {
+    background-color: blue;
+}
+
+.btn-verde {
+    background-color: green;
+}
