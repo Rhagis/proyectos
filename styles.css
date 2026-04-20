@@ -229,6 +229,35 @@ html[data-theme="dark"] .btn-mas-info:hover {
     justify-content: center;
     align-items: center;
     width: 100%;
+    gap: 1rem;
+}
+
+.botones button {
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid #000;
+    background-color: #000;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+        transform 0.2s ease;
+}
+
+html[data-theme="dark"] .botones button {
+    border-color: #cfd4cf;
+}
+
+.botones button:hover {
+    filter: brightness(1.1);
+}
+
+.botones button:active {
+    transform: translateY(0);
 }
 
 .btn-rojo {
