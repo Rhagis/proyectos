@@ -27,15 +27,15 @@
         </header>
         <div class="datos">
             <section>
-                <span class="numero">32</span>
+                <span id='edad' class="numero">32</span>
                 <span class="estad-texto"><i>años de edad</i></span>
             </section>
             <section>
-                <span class="numero">9</span>
+                <span id="exp" class="numero">9</span>
                 <span class="estad-texto"><i>años de experiencia</i></span>
             </section>
             <section>
-                <span class="numero">30</span>
+                <span id="game" class="numero">30</span>
                 <span class="estad-texto"><i>juegos completados</i></span>
             </section>
 
@@ -47,9 +47,27 @@
                 <button type="button" class="btn-verde">Verde</button>
             </div>
         </section>
+        <section>
+            <form action="" class="inviform">
+                <div>
+                    <label for="edad">Edad</label>
+                    <input type="text" class="age">
+                </div>
+                <div>
+                    <label for="exp">Experiencia</label>
+                    <input type="text" class="exp">
+                </div>
+                <div>
+                    <label for="game">Juegos</label>
+                    <input type="text" class="game">
+                </div>
+                <button type="submit" class="enviar">Enviar</button>
+            </form>
+        </section>
         <footer>
             <button type="button" class="btn-contacto">Contacto</button>
             <button type="button" class="btn-mas-info">Mas informacion</button>
+            <button type="button" class="btn-modificar-datos">Modificar datos</button>
         </footer>
     </main>
     <script src="theme.js"></script>

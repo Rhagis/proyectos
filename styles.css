@@ -322,3 +322,7 @@ html[data-theme="dark"] .botones button {
 .btn-verde {
     background-color: green;
 }
+
+.inviform {
+    visibility: hidden;
+}
