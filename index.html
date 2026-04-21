@@ -48,18 +48,18 @@
             </div>
         </section>
         <section>
-            <form action="" class="inviform">
-                <div>
-                    <label for="edad">Edad</label>
-                    <input type="text" class="age">
+            <form action="" class="inviform" novalidate>
+                <div class="inviform__campo">
+                    <label for="campo-edad">Edad</label>
+                    <input type="text" class="age" id="campo-edad" name="edad" inputmode="numeric" autocomplete="off">
                 </div>
-                <div>
-                    <label for="exp">Experiencia</label>
-                    <input type="text" class="exp">
+                <div class="inviform__campo">
+                    <label for="campo-exp">Experiencia</label>
+                    <input type="text" class="exp" id="campo-exp" name="experiencia" inputmode="numeric" autocomplete="off">
                 </div>
-                <div>
-                    <label for="game">Juegos</label>
-                    <input type="text" class="game">
+                <div class="inviform__campo">
+                    <label for="campo-game">Juegos</label>
+                    <input type="text" class="game" id="campo-game" name="juegos" inputmode="numeric" autocomplete="off">
                 </div>
                 <button type="submit" class="enviar">Enviar</button>
             </form>

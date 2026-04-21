@@ -152,8 +152,10 @@ function validarFormularioSoloNumeros() {
 })
 
 btnModificarDatos.addEventListener('click', () => {
-
-    formInvi.style.visibility = 'visible'
+    inputAge.value = spanAge.textContent
+    inputExp.value = spanExp.textContent
+    inputGame.value = spanGame.textContent
+    formInvi.classList.add('inviform--visible')
 })
 
 formInvi.addEventListener('submit', function (e) {
@@ -172,11 +174,8 @@ formInvi.addEventListener('submit', function (e) {
     spanExp.textContent = datosExp
     spanGame.textContent = datosGame
     guardarDatosFormularioEnLocalStorage()
-    inputAge.value = ''
-    inputExp.value = ''
-    inputGame.value = ''
     limpiarMensajesValidacionFormulario()
-    formInvi.style.visibility = 'hidden'
+    formInvi.classList.remove('inviform--visible')
 })
 
 

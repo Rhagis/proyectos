@@ -38,6 +38,19 @@ html {
     --boton-tema-fondo: #1e241f;
     --boton-tema-texto: #f4f6f4;
     --boton-tema-borde: #111;
+    /* Formulario */
+    --form-panel-fondo: rgba(255, 255, 255, 0.55);
+    --form-panel-borde: rgba(30, 36, 31, 0.12);
+    --form-panel-sombra: rgba(0, 0, 0, 0.06);
+    --form-label: #1a221c;
+    --form-input-fondo: #fafcf9;
+    --form-input-borde: rgba(30, 36, 31, 0.2);
+    --form-input-foco: #4a6b52;
+    --form-input-foco-halo: rgba(74, 107, 82, 0.28);
+    --form-enviar-fondo: linear-gradient(160deg, #2f4d38 0%, #1e2f24 100%);
+    --form-enviar-fondo-hover: linear-gradient(160deg, #3a5f45 0%, #24382c 100%);
+    --form-enviar-texto: #f4faf5;
+    --form-enviar-sombra: rgba(30, 47, 36, 0.35);
 }
 
 html[data-theme="dark"] {
@@ -52,6 +65,19 @@ html[data-theme="dark"] {
     --boton-tema-fondo: #3d4540;
     --boton-tema-texto: #fafcfa;
     --boton-tema-borde: #1a1f1c;
+    /* Formulario (oscuro) */
+    --form-panel-fondo: rgba(0, 0, 0, 0.22);
+    --form-panel-borde: rgba(255, 255, 255, 0.08);
+    --form-panel-sombra: rgba(0, 0, 0, 0.35);
+    --form-label: #e8f0e9;
+    --form-input-fondo: #1c221f;
+    --form-input-borde: rgba(255, 255, 255, 0.12);
+    --form-input-foco: #7cb88a;
+    --form-input-foco-halo: rgba(124, 184, 138, 0.25);
+    --form-enviar-fondo: linear-gradient(160deg, #3d5c47 0%, #263329 100%);
+    --form-enviar-fondo-hover: linear-gradient(160deg, #4a6f55 0%, #2f3d34 100%);
+    --form-enviar-texto: #f4faf5;
+    --form-enviar-sombra: rgba(0, 0, 0, 0.45);
 }
 
 /* =========================
@@ -323,6 +349,99 @@ html[data-theme="dark"] .botones button {
     background-color: green;
 }
 
+/* =========================
+   Formulario "Modificar datos"
+   ========================= */
 .inviform {
-    visibility: hidden;
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.35rem 1.4rem 1.45rem;
+    margin: 0.4rem 0 0.6rem;
+    border-radius: 14px;
+    background: var(--form-panel-fondo);
+    border: 1px solid var(--form-panel-borde);
+    box-shadow: 0 4px 14px var(--form-panel-sombra), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inviform.inviform--visible {
+    display: flex;
+}
+
+.inviform__campo {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.45rem;
+    width: 100%;
+}
+
+.inviform label {
+    font-size: 1.35rem;
+    font-weight: 650;
+    letter-spacing: 0.02em;
+    color: var(--form-label);
+    transition: color 0.3s ease;
+}
+
+.inviform input[type="text"] {
+    width: 100%;
+    padding: 0.65rem 0.95rem;
+    font-size: 1.55rem;
+    line-height: 1.35;
+    color: var(--texto);
+    background-color: var(--form-input-fondo);
+    border: 1.5px solid var(--form-input-borde);
+    border-radius: 10px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.inviform input[type="text"]::placeholder {
+    color: var(--texto-suave);
+    opacity: 0.75;
+}
+
+.inviform input[type="text"]:hover {
+    border-color: var(--form-input-foco);
+}
+
+.inviform input[type="text"]:focus {
+    outline: none;
+    border-color: var(--form-input-foco);
+    box-shadow: 0 0 0 3px var(--form-input-foco-halo);
+}
+
+button.enviar {
+    align-self: stretch;
+    margin-top: 0.35rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--form-enviar-texto);
+    background: var(--form-enviar-fondo);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px var(--form-enviar-sombra);
+    transition: transform 0.18s ease, box-shadow 0.2s ease, filter 0.2s ease, background 0.25s ease;
+}
+
+button.enviar:hover {
+    background: var(--form-enviar-fondo-hover);
+    filter: brightness(1.05);
+    box-shadow: 0 6px 18px var(--form-enviar-sombra);
+    transform: translateY(-1px);
+}
+
+button.enviar:active {
+    transform: translateY(0) scale(0.99);
+    box-shadow: 0 2px 8px var(--form-enviar-sombra);
+}
+
+button.enviar:focus-visible {
+    outline: 2px solid var(--form-input-foco);
+    outline-offset: 3px;
 }
